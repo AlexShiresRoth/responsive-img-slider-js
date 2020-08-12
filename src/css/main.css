@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap");
+.nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 10px #eee;
+  padding: 1rem 0; }
+  .nav h2 {
+    text-transform: uppercase;
+    font-size: 2vw; }
+
+@media screen and (max-width: 900px) {
+  .nav h2 {
+    text-transform: uppercase;
+    font-size: 4vw; }
+  .nav p {
+    max-width: 80%;
+    text-align: Center; } }
+
+@media screen and (max-width: 600px) {
+  .nav h2 {
+    text-transform: uppercase;
+    font-size: 7vw; }
+  .nav p {
+    max-width: 80%;
+    text-align: Center;
+    font-size: 3vw; } }
+
+.header {
+  background: url("../../imgs/lulu-mens-bg-sub-ears.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .header .testimonial-carousel {
+    width: 70vw;
+    overflow-x: scroll;
+    transition: all 2s ease;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    opacity: 0;
+    animation: fadein 2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards; }
+    .header .testimonial-carousel::-webkit-scrollbar {
+      height: 0;
+      display: none; }
+    .header .testimonial-carousel .review-box {
+      overflow-y: hidden;
+      height: 40vh;
+      width: 300%;
+      transition: all 2s ease; }
+      .header .testimonial-carousel .review-box .review {
+        width: 70vw;
+        height: 100%;
+        display: block;
+        float: left;
+        scroll-snap-align: center;
+        transition: all 2s ease;
+        background-position: center;
+        background-size: cover; }
+    .header .testimonial-carousel .visible {
+      transform: translate3d(0, 0, 0);
+      transition: all 2s ease; }
+    .header .testimonial-carousel .expelled {
+      transition: all 2s ease;
+      transform: translate3d(100vw, 0, 0); }
+
+@media screen and (max-width: 900px) {
+  .header {
+    height: 45vh;
+    min-height: 45vh; }
+    .header .testimonial-carousel {
+      width: 80vw;
+      overflow-x: scroll;
+      transition: all 2s ease;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      opacity: 0;
+      animation: fadein 2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards; }
+      .header .testimonial-carousel::-webkit-scrollbar {
+        height: 0;
+        display: none; }
+      .header .testimonial-carousel .review-box {
+        overflow-y: hidden;
+        height: 40vh;
+        width: 300%;
+        transition: all 2s ease; }
+        .header .testimonial-carousel .review-box .review {
+          width: 80vw;
+          height: 100%;
+          display: block;
+          float: left;
+          scroll-snap-align: center;
+          transition: all 2s ease;
+          background-position: center;
+          background-size: cover; }
+      .header .testimonial-carousel .visible {
+        transform: translate3d(0, 0, 0);
+        transition: all 2s ease; }
+      .header .testimonial-carousel .expelled {
+        transition: all 2s ease;
+        transform: translate3d(100vw, 0, 0); } }
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 30vh;
+    min-height: 30vh; }
+    .header .testimonial-carousel {
+      width: 90vw;
+      overflow-x: scroll;
+      transition: all 2s ease;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      opacity: 0;
+      animation: fadein 2s cubic-bezier(0.645, 0.045, 0.355, 1) forwards; }
+      .header .testimonial-carousel::-webkit-scrollbar {
+        height: 0;
+        display: none; }
+      .header .testimonial-carousel .review-box {
+        overflow-y: hidden;
+        height: 30vh;
+        width: 300%;
+        transition: all 2s ease; }
+        .header .testimonial-carousel .review-box .review {
+          width: 90vw;
+          height: 100%;
+          display: block;
+          float: left;
+          scroll-snap-align: center;
+          transition: all 2s ease;
+          background-position: center;
+          background-size: cover; }
+      .header .testimonial-carousel .visible {
+        transform: translate3d(0, 0, 0);
+        transition: all 2s ease; }
+      .header .testimonial-carousel .expelled {
+        transition: all 2s ease;
+        transform: translate3d(100vw, 0, 0); } }
+
+@keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+label,
+span {
+  font-family: "Oswald", serif; }
