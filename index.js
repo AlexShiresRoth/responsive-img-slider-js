@@ -1,5 +1,5 @@
 (() => {
-  const state = { index: 0, position: 0, carouselWidth: 0 };
+  const state = { index: 0, position: 0, carouselWidth: 0, start: 0, end: 0 };
 
   const testimonials = [
     {
@@ -46,6 +46,15 @@
     return (state.carouselWidth = selectors.carousel.getBoundingClientRect().width);
   };
 
+  const handleTouchStart = (e) => {
+    clearInterval();
+    state.start = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    state.end = e.changedTouches[0].clientX;
+  };
+
   const initCarousel = () => {
     //layout array to html
     testimonials.map((item) => {
@@ -56,12 +65,17 @@
     });
 
     (() => {
-      //ping index state every 10ms
+      //   ping index state every 10ms
       const reviews = document.querySelectorAll(".review");
-
+      const fadeInOut = (r) => {
+        r.style.opacity = "0";
+        setTimeout(() => {
+          r.style.opacity = "1";
+        }, 2000);
+      };
       setInterval(() => {
         reviews.forEach((r, i) => {
-          i !== state.index ? (r.style.opacity = "0") : (r.style.opacity = "1");
+          i !== state.index ? fadeInOut(r) : (r.style.opacity = "1");
         });
       }, 10);
     })();
@@ -74,6 +88,7 @@
       if (state.index > testimonials.length - 1) {
         clear();
       }
+      console.log(state.index);
     }, 7000);
   };
 
@@ -81,6 +96,15 @@
     initCarousel();
   };
 
+//   window.addEventListener("touchend", (e) => {
+//     handleTouchEnd(e);
+//     setTimeout(() => {
+//       calculateSwipeDirection();
+//     }, 10);
+//   });
+
+  //TODO fix scrolling funcitonality
+  //   window.addEventListener("touchstart", (e) => handleTouchStart(e));
   window.addEventListener("resize", handleCarouselResize);
   window.addEventListener("load", main);
 })();
